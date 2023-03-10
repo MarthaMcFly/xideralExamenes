@@ -37,24 +37,24 @@
 		
 			<table>
 				<tr>
-					<th>Nombre</th> <!-- Se cambio First Name -->
-					<th>Apellido</th> <!-- Se cambio Last Name -->
+					<th>Nombre</th> 
+					<th>Apellido</th> 
 					<th>Grupo</th>
 					<th>Calificacion</th>
 					<th>Action</th>
 				</tr>
 				
 				<!-- loop over and print our customers -->
-				<c:forEach var="tempAlumno" items="${customers}">
+				<c:forEach var="tempAlumno" items="${alumnos}">
 				
 					<!-- construct an "update" link with customer id -->
 					<c:url var="updateLink" value="/alumno/showFormForUpdate">
-						<c:param name="customerId" value="${tempAlumno.id}" />
+						<c:param name="alumnoId" value="${tempAlumno.id}" />
 					</c:url>					
 
-					<!-- construct an "delete" link with customer id -->
+					<!-- construct an "delete" link with alumno id -->
 					<c:url var="deleteLink" value="/alumno/delete">
-						<c:param name="customerId" value="${tempAlumno.id}" />
+						<c:param name="alumnoId" value="${tempAlumno.id}" />
 					</c:url>					
 					
 					<tr>

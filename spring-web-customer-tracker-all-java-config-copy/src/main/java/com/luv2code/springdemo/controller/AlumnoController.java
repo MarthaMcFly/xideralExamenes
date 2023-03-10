@@ -29,9 +29,9 @@ public class AlumnoController {
 			List<Alumno> listaAlumnos = alumnoService.getAlumnos();
 					
 			// add the customers to the model
-			theModel.addAttribute("customers", listaAlumnos);
+			theModel.addAttribute("alumnos", listaAlumnos);
 			
-			return "list-customers";    //checar esta linea
+			return "list-alumnos";    //regresa al jsp list-alumnos
 		}
 		
 		@GetMapping("/showFormForAdd")
@@ -42,14 +42,12 @@ public class AlumnoController {
 			
 			theModel.addAttribute("alumno", _alumno);
 			
-			return "alumno-form"; //checar esta linea, acá debería ir el jsp alumno-form
+			return "alumno-form"; //va al jsp alumno-form
 		}
 		
 		@PostMapping("/saveAlumno")
 		public String saveAlumno(@ModelAttribute("alumno") Alumno _alumno) {
-			
-			System.out.println("Entró controller savealumno");
-			
+						
 			// save the customer using our service
 			alumnoService.saveAlumno(_alumno);	
 			
@@ -57,7 +55,7 @@ public class AlumnoController {
 		}
 		
 		@GetMapping("/showFormForUpdate")
-		public String showFormForUpdate(@RequestParam("customerId") int theId,
+		public String showFormForUpdate(@RequestParam("alumnoId") int theId,
 										Model theModel) {
 			
 			// get the customer from our service
@@ -67,11 +65,11 @@ public class AlumnoController {
 			theModel.addAttribute("alumno", _alumno);
 			
 			// send over to our form		
-			return "alumno-form";  //checar esta linea, acá debería ir el jsp alumno-form
+			return "alumno-form";  //va al jsp alumno-form
 		}
 		
 		@GetMapping("/delete")
-		public String deleteAlumno(@RequestParam("customerId") int theId) { //checar con list-jsp
+		public String deleteAlumno(@RequestParam("alumnoId") int theId) { //recibe parametro del jsp
 			
 			// delete the customer
 			alumnoService.deleteAlumno(theId);
