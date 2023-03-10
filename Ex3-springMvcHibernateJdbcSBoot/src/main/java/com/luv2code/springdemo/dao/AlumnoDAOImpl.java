@@ -67,8 +67,8 @@ public class AlumnoDAOImpl implements AlumnoDAO {
 			
 			// delete object with primary key
 			Query theQuery = 
-					currentSession.createQuery("delete from Alumno where id=:customerId"); //acuerdate que es el del entity no de la DB
-			theQuery.setParameter("customerId", theId);  //checar customerId
+					currentSession.createQuery("delete from Alumno where id=:alumnoId"); //acuerdate que es el del entity no de la DB
+			theQuery.setParameter("alumnoId", theId);  //checar customerId
 			
 			theQuery.executeUpdate();		
 		}

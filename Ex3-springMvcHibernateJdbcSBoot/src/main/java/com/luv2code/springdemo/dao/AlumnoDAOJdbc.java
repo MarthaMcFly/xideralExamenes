@@ -24,7 +24,7 @@ public class AlumnoDAOJdbc implements AlumnoDAO {
 	@Override
 	public List<Alumno> getAlumnos() {
 
-		System.out.println("PASO POR AlumnoDAOJdbc");
+		System.out.println("PASO POR AlumnoDAOJdbc"); //pasa saber si pasó por la jdbc
 		List<Alumno> alumnos = new ArrayList<>();
 
 		// create sql statement
