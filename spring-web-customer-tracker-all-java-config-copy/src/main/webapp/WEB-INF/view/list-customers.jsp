@@ -5,7 +5,7 @@
 <html>
 
 <head>
-	<title>List Customers</title>
+	<title>Lista de alumnos</title>
 	
 	<!-- reference our style sheet -->
 
@@ -13,7 +13,7 @@
 		  rel="stylesheet"
 		  href="${pageContext.request.contextPath}/resources/css/style.css" />
 
-</head>
+</head> 
 
 <body>
 
@@ -58,8 +58,8 @@
 					</c:url>					
 					
 					<tr>
-						<td> ${tempAlumno.nombre} </td> <!-- Se cambio firstName -->
-						<td> ${tempAlumno.apellido} </td> <!-- Se cambio lastName -->
+						<td> ${tempAlumno.nombre} </td> 
+						<td> ${tempAlumno.apellido} </td> 
 						<td> ${tempAlumno.grupo} </td>
 						<td> ${tempAlumno.calificacion} </td>
 						

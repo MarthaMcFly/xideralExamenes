@@ -42,7 +42,7 @@ public class AlumnoController {
 			
 			theModel.addAttribute("alumno", _alumno);
 			
-			return "customer-form"; //checar esta linea, acá debería ir el jsp alumno-form
+			return "alumno-form"; //checar esta linea, acá debería ir el jsp alumno-form
 		}
 		
 		@PostMapping("/saveAlumno")
@@ -67,7 +67,7 @@ public class AlumnoController {
 			theModel.addAttribute("alumno", _alumno);
 			
 			// send over to our form		
-			return "customer-form";  //checar esta linea, acá debería ir el jsp alumno-form
+			return "alumno-form";  //checar esta linea, acá debería ir el jsp alumno-form
 		}
 		
 		@GetMapping("/delete")
