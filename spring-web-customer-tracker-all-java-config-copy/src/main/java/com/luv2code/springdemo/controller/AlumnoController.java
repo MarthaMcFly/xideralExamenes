@@ -15,7 +15,7 @@ import com.luv2code.springdemo.entity.Alumno;
 import com.luv2code.springdemo.service.AlumnoService;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/alumno")
 public class AlumnoController {
 
 	// need to inject our customer service
@@ -53,7 +53,7 @@ public class AlumnoController {
 			// save the customer using our service
 			alumnoService.saveAlumno(_alumno);	
 			
-			return "redirect:/customer/list";  //checar esta linea 
+			return "redirect:/alumno/list";  
 		}
 		
 		@GetMapping("/showFormForUpdate")
@@ -76,7 +76,7 @@ public class AlumnoController {
 			// delete the customer
 			alumnoService.deleteAlumno(theId);
 			
-			return "redirect:/customer/list";  //checar esta linea 
+			return "redirect:/alumno/list";   
 		}
 }
 
