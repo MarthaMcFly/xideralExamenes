@@ -45,7 +45,20 @@
 
 					<tr>
 						<td><label>Grupo:</label></td>
-						<td><form:input path="grupo" /></td>
+						<td>
+							<select name="grupo" form:input path="grupo">
+							  <option value="grupo" selected>Grupo</option>
+							  <option value="1A" >1A</option>
+							  <option value="1B" >1B</option>
+							  <option value="1C" >1C</option>
+							  <option value="2A" >2A</option>
+							  <option value="2B" >2B</option>
+							  <option value="2C" >2C</option>
+							  <option value="3A" >3A</option>
+							  <option value="3B" >3B</option>
+							  <option value="3C" >3C</option>
+							</select>
+						</td>
 					</tr>
 					
 					<tr>
