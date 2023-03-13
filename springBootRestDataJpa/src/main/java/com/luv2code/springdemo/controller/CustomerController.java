@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.luv2code.springdemo.entity.Customer;
 import com.luv2code.springdemo.service.CustomerService;
+import com.luv2code.springdemo.service.CustomerServiceImpl;
 
 @RestController
 @RequestMapping("/rest")
@@ -65,17 +66,27 @@ public class CustomerController {
 	@DeleteMapping("/customers/{customerId}")
 	public String deleteCustomer(@PathVariable int customerId) {
 		
-		Customer tempEmployee = customerService.getCustomer(customerId);
+		Customer tempCustomer = customerService.getCustomer(customerId);
 		
 		// throw exception if null
 		
-		if (tempEmployee == null) {
+		if (tempCustomer == null) {
 			throw new RuntimeException("Customer id not found - " + customerId);
 		}
 		
 		customerService.deleteCustomer(customerId);
 		
 		return "Deleted customer id - " + customerId;
+	}
+	
+	
+	//Para encontrar por email: 
+	@GetMapping("/customers/email/{email}")
+	public Customer findByEmail(@PathVariable String email) {
+		CustomerServiceImpl csi = (CustomerServiceImpl)customerService;
+		
+		Customer tempCustomer = csi.getCustomerByEmail(email);
+		return tempCustomer;
 	}
 	
 	

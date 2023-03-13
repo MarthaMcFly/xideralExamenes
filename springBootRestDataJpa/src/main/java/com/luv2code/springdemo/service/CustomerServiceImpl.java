@@ -57,6 +57,17 @@ private CostumerRepository customerRepository;
 		
 		customerRepository.deleteById(theId);
 	}
+	
+	//Obtener por email: 
+	@Transactional
+	public Customer getCustomerByEmail(String email) {
+		
+		Customer customer = customerRepository.findByEmail(email);
+
+        return customer;
+	}
+	
+	
 }
 
 
