@@ -33,7 +33,7 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/customers/{customerId}")
-	public Customer getEmployee(@PathVariable int customerId) throws Exception {
+	public Customer getCustomer(@PathVariable int customerId) throws Exception {
 		
 		Customer theCustomer = customerService.getCustomer(customerId);
 		
@@ -45,24 +45,21 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/customers")
-	public Customer addEmployee(@RequestBody Customer theCustomer) {
-		
-		// also just in case they pass an id in JSON ... set id to 0
-		// this is to force a save of new item ... instead of update
+	public Customer addCustomer(@RequestBody Customer theCustomer) {
 		
 		theCustomer.setId(0);
 		
-		customerService.saveCustomer(theCustomer);
+		Customer addCustomer = customerService.saveCustomer(theCustomer);
 		
-		return theCustomer;
+		return addCustomer; //regresa el customer que estamos dando de alta con su id
 	}
 	
 	@PutMapping("/customers")
 	public Customer updateCustomer(@RequestBody Customer theCustomer) {
 		
-		customerService.saveCustomer(theCustomer);
+		Customer Customer=customerService.saveCustomer(theCustomer);//recupera la información cambiada y la manda de regreso 
 		
-		return theCustomer;
+		return Customer;
 	}
 	
 	@DeleteMapping("/customers/{customerId}")
