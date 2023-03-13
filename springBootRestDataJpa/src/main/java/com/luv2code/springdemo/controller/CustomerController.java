@@ -83,10 +83,8 @@ public class CustomerController {
 	//Para encontrar por email: 
 	@GetMapping("/customers/email/{email}")
 	public Customer findByEmail(@PathVariable String email) {
-		CustomerServiceImpl csi = (CustomerServiceImpl)customerService;
 		
-		Customer tempCustomer = csi.getCustomerByEmail(email);
-		return tempCustomer;
+		return customerService.getCustomerByEmail(email);
 	}
 	
 	
