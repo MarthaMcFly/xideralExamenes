@@ -77,7 +77,7 @@ public class AlumnoDAOJdbc implements AlumnoDAO {
 			
 			//id para where del update
 			if(_alumno.getId() != 0)
-				ps.setInt(4, _alumno.getId());
+				ps.setInt(5, _alumno.getId());
 
 			ps.execute();
 			
