@@ -35,9 +35,9 @@ public class SpringBatchConfig {
     public FlatFileItemReader<Customer> reader() {
         FlatFileItemReader<Customer> itemReader = new FlatFileItemReader<>();
         itemReader.setResource(new FileSystemResource("src/main/resources/customers.csv"));
-        itemReader.setName("csvReader");
-        itemReader.setLinesToSkip(1);
-        itemReader.setLineMapper(lineMapper());
+        itemReader.setName("csvReader"); //cambia el nombre
+        itemReader.setLinesToSkip(1); //salta la primera linea
+        itemReader.setLineMapper(lineMapper()); 
         return itemReader;
     }
 
@@ -73,7 +73,8 @@ public class SpringBatchConfig {
 
     @Bean
     public Step step1() {
-        return stepBuilderFactory.get("csv-step").<Customer, Customer>chunk(10)
+        return stepBuilderFactory.get("csv-step") //Esto usa el patron de diseño Builder
+        		.<Customer, Customer>chunk(10) //ejectura la accion de 10 en 10
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())
