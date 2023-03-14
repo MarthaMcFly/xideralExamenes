@@ -14,6 +14,7 @@ import com.luv2code.springdemo.entity.Alumno;
 public class AlumnoServiceImpl implements AlumnoService {
 
 	@Autowired
+	@Qualifier("alumnoDAOJdbc") //inyectamos la clase que va a aplicar con minuscula
 	private AlumnoDAO alumnoDAO;
 	
 	@Override
