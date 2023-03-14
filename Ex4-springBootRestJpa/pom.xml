@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.luv2code</groupId>
-	<artifactId>springBootRestJpa</artifactId>
+	<artifactId>Ex4-springBootRestJpaJdbc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springdemo</name>
-	<description>Servicio Rest con JPA</description>
+	<name>Ex4-springBootRestJpaJdbc</name>
+	<description>Examen 4- proyecto con springboot rest, jpa, jdbc</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

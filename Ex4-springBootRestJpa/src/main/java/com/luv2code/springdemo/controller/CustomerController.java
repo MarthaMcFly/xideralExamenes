@@ -32,13 +32,13 @@ public class CustomerController {
 		return alumnoService.getAlumnos();
 	}
 	
-	@GetMapping("/customers/{customerId}")
+	@GetMapping("/alumnos/{alumnoId}")
 	public Alumno getCustomer(@PathVariable int alumnoId) throws Exception {
 		
 		Alumno _alumno = alumnoService.getAlumno(alumnoId);
 		
 		if (_alumno == null) {
-			throw new Exception("Customer id not found - " + alumnoId);
+			throw new Exception("Alumno id not found - " + alumnoId);
 		}
 		
 		return _alumno;
