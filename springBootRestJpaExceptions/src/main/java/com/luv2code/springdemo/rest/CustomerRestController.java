@@ -1,4 +1,4 @@
-package rest;
+package com.luv2code.springdemo.rest;
 
 import java.util.List;
 
