@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.controller;
+package rest;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import com.luv2code.springdemo.service.CustomerService;
 
 @RestController
 @RequestMapping("/rest")
-public class CustomerController {
+public class CustomerRestController {
 
 	// need to inject our customer service
 	@Autowired

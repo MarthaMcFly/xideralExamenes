@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.controller;
+package com.luv2code.springdemo.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
