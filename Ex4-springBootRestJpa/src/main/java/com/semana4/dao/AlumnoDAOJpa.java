@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.dao;
+package com.semana4.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Alumno;
+import com.semana4.entity.Alumno;
 
 @Repository
 public class AlumnoDAOJpa implements AlumnoDAO {
@@ -25,7 +25,8 @@ public class AlumnoDAOJpa implements AlumnoDAO {
 
 	@Override
 	public List<Alumno> getAlumnos() {
-		// create a query
+		System.out.println("PASO POR AlumnoDAOJpa método getAlumnos"); 
+		
         TypedQuery<Alumno> theQuery = entityManager.createQuery("from Alumno", Alumno.class);
 
         // execute query and get result list
@@ -37,18 +38,24 @@ public class AlumnoDAOJpa implements AlumnoDAO {
 
 	@Override
 	public Alumno saveAlumno(Alumno _alumno) {
+		System.out.println("PASO POR AlumnoDAOJpa método saveAlumno"); 
+
 		Alumno alumno = entityManager.merge(_alumno);
 		return alumno;
 	}
 
 	@Override
 	public Alumno getAlumno(int theId) {
+		System.out.println("PASO POR AlumnoDAOJpa método getAlumno"); 
+
 		Alumno _alumno = entityManager.find(Alumno.class, theId);
 		return _alumno;
 	}
 
 	@Override
 	public void deleteAlumno(int theId) {
+		System.out.println("PASO POR AlumnoDAOJpa método deleteAlumno"); 
+
 		Alumno _alumno = entityManager.find(Alumno.class, theId);
         // remove employee
         entityManager.remove(_alumno);

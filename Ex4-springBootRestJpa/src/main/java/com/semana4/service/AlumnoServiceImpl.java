@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.service;
+package com.semana4.service;
 
 import java.util.List;
 
@@ -7,14 +7,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springdemo.dao.AlumnoDAO;
-import com.luv2code.springdemo.entity.Alumno;
+import com.semana4.dao.AlumnoDAO;
+import com.semana4.entity.Alumno;
 
 @Service
 public class AlumnoServiceImpl implements AlumnoService {
 
 	@Autowired
-	@Qualifier("alumnoDAOJdbc") //inyectamos la clase que va a aplicar con minuscula
+	//@Qualifier("alumnoDAOJdbc") //inyectamos a Jdbc
+	@Qualifier("alumnoDAOJpa") //inyectamos con Jpa
 	private AlumnoDAO alumnoDAO;
 	
 	@Override

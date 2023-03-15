@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.dao;
+package com.semana4.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.luv2code.springdemo.entity.Alumno;
+import com.semana4.entity.Alumno;
 
 @Repository
 public class AlumnoDAOJdbc implements AlumnoDAO {

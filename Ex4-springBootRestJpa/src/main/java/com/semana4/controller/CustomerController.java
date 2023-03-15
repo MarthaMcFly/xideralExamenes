@@ -1,4 +1,4 @@
-package com.luv2code.springdemo.controller;
+package com.semana4.controller;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.luv2code.springdemo.entity.Alumno;
-import com.luv2code.springdemo.service.AlumnoService;
+import com.semana4.entity.Alumno;
+import com.semana4.service.AlumnoService;
 
 @RestController
 @RequestMapping("/rest")

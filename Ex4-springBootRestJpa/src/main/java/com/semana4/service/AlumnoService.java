@@ -1,10 +1,11 @@
-package com.luv2code.springdemo.dao;
+package com.semana4.service;
 
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Alumno;
+import com.semana4.entity.Alumno;
 
-public interface AlumnoDAO {
+
+public interface AlumnoService {
 
 	public List<Alumno> getAlumnos();
 
