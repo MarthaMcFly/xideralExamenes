@@ -43,25 +43,51 @@ public class AlumnoServiceImpl implements AlumnoService {
 
 		List<Alumno> alumnos = responseEntity.getBody();
 
-		logger.info("in getCustomers(): customers" + alumnos);
+		logger.info("in getAlumnos(): customers" + alumnos);
 
 		return alumnos;	}
 
 	@Override
 	public void saveAlumno(Alumno _alumno) {
+		logger.info("in saveAlumno(): Calling REST API " + crmRestUrl);
 
+		int alumnoId = _alumno.getId();
+
+		if (alumnoId == 0) {
+			// add employee
+			restTemplate.postForEntity(crmRestUrl, _alumno, String.class);
+		} else {
+			// update employee 
+			restTemplate.put(crmRestUrl, _alumno);
+		}
+
+		logger.info("in saveAlumno(): success");
 		
 	}
 
 	@Override
 	public Alumno getAlumno(int theId) {
+		logger.info("in getAlumno(): Calling REST API " + crmRestUrl);
+
+		// make REST call
+
+		Alumno _alumno = restTemplate.getForObject(crmRestUrl + "/" + theId, Alumno.class);
+
+		logger.info("in saveCustomer(): theCustomer=" + _alumno);
+
+		return _alumno;
 		
-		return null; 
 	}
 
 	@Override
 	public void deleteAlumno(int theId) {
-		
+		logger.info("in deleteAlumno(): Calling REST API " + crmRestUrl);
+
+		// make REST call
+
+		restTemplate.delete(crmRestUrl + "/" + theId);
+
+		logger.info("in deleteAlumno(): deleted alumno theId="+ theId);
 	}
 }
 
