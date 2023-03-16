@@ -68,13 +68,6 @@ public class Principal {
 				  Pattern.compile(", ").splitAsStream("a, b, c");
 		streamOfString.forEach(System.out::println);
 		
-		//stream of file
-		Path path = Paths.get("C:\\file.txt");
-		Stream<String> streamOfStrings = Files.lines(path);
-		Stream<String> streamWithCharset = 
-		  Files.lines(path, Charset.forName("UTF-8"));
-		
-		
 		
 	}
 	
